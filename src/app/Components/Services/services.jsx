@@ -50,7 +50,7 @@ export default function Services() {
       description:
         "Farmhouse design blends rustic charm with modern comfort, featuring open spaces, natural materials, and a warm, welcoming look.",
       link: "/services/farmhouseDesign",
-      image: "/images/projects/farmHouse1.png",
+      image: "/images/projects/farmhouse1.png",
     },
   ];
 
