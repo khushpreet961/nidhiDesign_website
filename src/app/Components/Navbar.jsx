@@ -62,7 +62,7 @@ export default function Navbar() {
             {/* LOGO */}
 
             <Link href="/" className="flex items-center">
-              <div className="relative w-[70px] h-[70px] md:w-[80px] md:h-[80px] rounded-full overflow-hidden border-2 border-[#d97706] bg-black">
+              <div className="relative -mt-3 w-[70px] h-[70px] md:w-[80px] md:h-[80px] rounded-full overflow-hidden border-2 border-[#d97706] bg-black">
                 <Image
                   src="/images/logonew2.png"
                   alt="Nidhi Design Logo"
