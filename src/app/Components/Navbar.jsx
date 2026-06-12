@@ -57,12 +57,12 @@ export default function Navbar() {
       <header className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${headerClass} py-4`}>
         <div className="max-w-7xl mx-auto px-6 lg:px-10">
           <div className="flex items-center justify-between">
-
-
+            
+          
             {/* LOGO */}
-            {/* LOGO */}
-            <Link href="/" className="flex items-center gap-3">
-              <div className="relative w-[80px] h-[80px] rounded-full overflow-hidden border-2 border-[#d97706] bg-white shadow-lg">
+
+            <Link href="/" className="flex items-center">
+              <div className="relative w-[70px] h-[70px] md:w-[80px] md:h-[80px] rounded-full overflow-hidden border-2 border-[#d97706] bg-black">
                 <Image
                   src="/images/logonew2.png"
                   alt="Nidhi Design Logo"
@@ -73,7 +73,6 @@ export default function Navbar() {
                 />
               </div>
             </Link>
-
             {/* DESKTOP MENU */}
             <nav className="hidden lg:flex items-center gap-10">
               <Link href="/" className={linkClass}>HOME</Link>
