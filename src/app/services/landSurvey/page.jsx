@@ -159,7 +159,7 @@ export default function LandSurveyPage() {
           {[
             { number: "500+", label: "Projects Completed" },
             { number: "99%", label: "Accuracy Rate" },
-            { number: "10+", label: "Years Experience" },
+            { number: "15+", label: "Years Experience" },
             { number: "50+", label: "Happy Clients" },
           ].map((stat, i) => (
             <div key={i}>

@@ -5,9 +5,7 @@ import Link from "next/link";
 import { HiArrowRight } from "react-icons/hi";
 import {
   FaInstagram,
-  FaFacebookF,
-  FaPinterestP,
-  FaLinkedinIn,
+  FaYoutube,
 } from "react-icons/fa";
 
 const navLinks = [
@@ -28,10 +26,16 @@ const services = [
 ];
 
 const socials = [
-  { icon: <FaInstagram />, href: "#", label: "Instagram" },
-  { icon: <FaFacebookF />, href: "#", label: "Facebook" },
-  { icon: <FaPinterestP />, href: "#", label: "Pinterest" },
-  { icon: <FaLinkedinIn />, href: "#", label: "LinkedIn" },
+  {
+    icon: <FaInstagram />,
+    href: "https://www.instagram.com/nidhidesigns10/",
+    label: "Instagram",
+  },
+  {
+    icon: <FaYoutube />,
+    href: "https://www.youtube.com/@nidhidesigns10",
+    label: "YouTube",
+  },
 ];
 const currentYear = new Date().getFullYear();
 export default function Footer() {
@@ -92,12 +96,14 @@ export default function Footer() {
             {/* SOCIALS */}
             <div className="flex items-center gap-3">
               {socials.map((s) => (
-                <a
-                  key={s.label}
-                  href={s.href}
-                  aria-label={s.label}
-                  className="w-10 h-10 border border-[#333] rounded-full flex items-center justify-center text-[#888] hover:border-[#C8A97E] hover:text-[#C8A97E] transition-all duration-300 text-sm"
-                >
+               <a
+  key={s.label}
+  href={s.href}
+  target="_blank"
+  rel="noopener noreferrer"
+  aria-label={s.label}
+  className="w-10 h-10 border border-[#333] rounded-full flex items-center justify-center text-[#888] hover:border-[#C8A97E] hover:text-[#C8A97E] transition-all duration-300 text-sm"
+>
                   {s.icon}
                 </a>
               ))}
