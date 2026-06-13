@@ -85,71 +85,71 @@ export default function AgricultureSurveyPage() {
   };
 
 
-   const handleUpload = async () => {
-  if (!selectedFile) {
-    alert("Please select a photo");
-    return;
-  }
-
-  if (!newPhoto.title) {
-    alert("Please enter photo title");
-    return;
-  }
-
-  try {
-    setUploading(true);
-
-    const formData = new FormData();
-    formData.append("file", selectedFile);
-
-    const uploadRes = await fetch("/api/admin/upload", {
-      method: "POST",
-      body: formData,
-    });
-
-    const uploadData = await uploadRes.json();
-
-    if (!uploadData.success) {
-      throw new Error(uploadData.message);
+  const handleUpload = async () => {
+    if (!selectedFile) {
+      alert("Please select a photo");
+      return;
     }
 
-    const saveRes = await fetch("/api/admin/gallery", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        title: newPhoto.title,
+    if (!newPhoto.title) {
+      alert("Please enter photo title");
+      return;
+    }
+
+    try {
+      setUploading(true);
+
+      const formData = new FormData();
+      formData.append("file", selectedFile);
+
+      const uploadRes = await fetch("/api/admin/upload", {
+        method: "POST",
+        body: formData,
+      });
+
+      const uploadData = await uploadRes.json();
+
+      if (!uploadData.success) {
+        throw new Error(uploadData.message);
+      }
+
+      const saveRes = await fetch("/api/admin/gallery", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          title: newPhoto.title,
+          category: "Agriculture Survey",
+          imageUrl: uploadData.imageUrl,
+          publicId: uploadData.publicId,
+        }),
+      });
+
+      const saveData = await saveRes.json();
+
+      if (!saveData.success) {
+        throw new Error(saveData.message);
+      }
+
+      setPhotos((prev) => [saveData.photo, ...prev]);
+
+      setShowAddModal(false);
+      setSelectedFile(null);
+
+      setNewPhoto({
+        title: "",
         category: "Agriculture Survey",
-        imageUrl: uploadData.imageUrl,
-        publicId: uploadData.publicId,
-      }),
-    });
+      });
 
-    const saveData = await saveRes.json();
-
-    if (!saveData.success) {
-      throw new Error(saveData.message);
+      alert("Photo uploaded successfully!");
+    } catch (error) {
+      console.error(error);
+      alert(error.message);
+    } finally {
+      setUploading(false);
     }
-
-    setPhotos((prev) => [saveData.photo, ...prev]);
-
-    setShowAddModal(false);
-    setSelectedFile(null);
-
-    setNewPhoto({
-      title: "",
-      category: "Agriculture Survey",
-    });
-
-    alert("Photo uploaded successfully!");
-  } catch (error) {
-    console.error(error);
-    alert(error.message);
-  } finally {
-    setUploading(false);
-  }
-};
+  };
 
   return (
     <section className="bg-[#f4f0e8] min-h-screen overflow-hidden">
@@ -170,7 +170,7 @@ export default function AgricultureSurveyPage() {
             <a href="#process" className="px-8 py-4 rounded-full border border-white/20 text-white text-sm font-medium hover:bg-white/10 transition-all duration-300">Our Process</a>
           </motion.div>
           <motion.div variants={fadeUp} initial="hidden" animate="show" custom={4} className="mt-16 grid grid-cols-3 gap-6 border-t border-white/10 pt-10">
-            {[["800+", "Projects"], ["99%", "Accuracy"], ["15+", "Years"]].map(([n, l], i) => (
+            {[["500+", "Projects"], ["99%", "Accuracy"], ["15+", "Years"]].map(([n, l], i) => (
               <div key={i}>
                 <p className="text-2xl font-semibold text-amber-400">{n}</p>
                 <p className="text-gray-500 text-xs uppercase tracking-widest mt-1">{l}</p>
@@ -180,7 +180,14 @@ export default function AgricultureSurveyPage() {
         </div>
 
         <motion.div initial={{ opacity: 0, scale: 1.05 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }} className="relative h-[50vh] lg:h-auto">
-          <Image src="/images/projects/agriculture2.png" alt="Agriculture Survey Field" fill priority className="object-cover" />
+          <Image
+            src="/images/projects/agriculture2.png"
+            alt="Agriculture Survey Field"
+            fill
+            sizes="100vw"
+            priority
+            className="object-cover"
+          />
           <div className="absolute inset-0 bg-gradient-to-r from-[#1a1a14]/40 to-transparent lg:bg-none" />
           <div className="absolute bottom-10 left-10 bg-white/90 backdrop-blur-sm rounded-2xl px-6 py-4 shadow-xl">
             <p className="text-xs uppercase tracking-widest text-amber-600 font-medium">Live Field Survey</p>
@@ -313,54 +320,54 @@ export default function AgricultureSurveyPage() {
         </motion.div>
       </div>
 
-{showAddModal && (
-  <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 px-4">
-    <div className="bg-white rounded-3xl p-8 w-full max-w-lg">
-      <h2 className="text-3xl font-bold mb-6">
-        Add New Agriculture Photo
-      </h2>
+      {showAddModal && (
+        <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 px-4">
+          <div className="bg-white rounded-3xl p-8 w-full max-w-lg">
+            <h2 className="text-3xl font-bold mb-6">
+              Add New Agriculture Photo
+            </h2>
 
-      <input
-        type="text"
-        placeholder="Photo Title"
-        value={newPhoto.title}
-        onChange={(e) =>
-          setNewPhoto({
-            ...newPhoto,
-            title: e.target.value,
-          })
-        }
-        className="w-full border rounded-xl px-5 py-4 mb-5"
-      />
+            <input
+              type="text"
+              placeholder="Photo Title"
+              value={newPhoto.title}
+              onChange={(e) =>
+                setNewPhoto({
+                  ...newPhoto,
+                  title: e.target.value,
+                })
+              }
+              className="w-full border rounded-xl px-5 py-4 mb-5"
+            />
 
-      <input
-        type="file"
-        accept="image/*"
-        onChange={(e) =>
-          setSelectedFile(e.target.files[0])
-        }
-        className="w-full border rounded-xl px-5 py-4 mb-5"
-      />
+            <input
+              type="file"
+              accept="image/*"
+              onChange={(e) =>
+                setSelectedFile(e.target.files[0])
+              }
+              className="w-full border rounded-xl px-5 py-4 mb-5"
+            />
 
-      <div className="flex gap-4">
-        <button
-          onClick={() => setShowAddModal(false)}
-          className="flex-1 border rounded-xl py-4"
-        >
-          Cancel
-        </button>
+            <div className="flex gap-4">
+              <button
+                onClick={() => setShowAddModal(false)}
+                className="flex-1 border rounded-xl py-4"
+              >
+                Cancel
+              </button>
 
-        <button
-          onClick={handleUpload}
-          disabled={uploading}
-          className="flex-1 bg-amber-500 text-white rounded-xl py-4"
-        >
-          {uploading ? "Uploading..." : "Upload"}
-        </button>
-      </div>
-    </div>
-  </div>
-)}
+              <button
+                onClick={handleUpload}
+                disabled={uploading}
+                className="flex-1 bg-amber-500 text-white rounded-xl py-4"
+              >
+                {uploading ? "Uploading..." : "Upload"}
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </section>
   );
 }

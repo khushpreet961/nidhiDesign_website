@@ -141,7 +141,14 @@ const handleUpload = async () => {
 
       {/* HERO */}
       <div className="relative h-[90vh] overflow-hidden">
-        <Image src="/images/projects/farmHouse.png" alt="Farm House Design" fill priority className="object-cover" />
+      <Image
+  src="/images/projects/farmHouse.png"
+  alt="Farm House Design"
+  fill
+  sizes="100vw"
+  priority
+  className="object-cover"
+/>
         <div className="absolute inset-0 bg-black/50" />
         <div className="absolute inset-0 flex items-center">
           <div className="max-w-7xl mx-auto px-6">

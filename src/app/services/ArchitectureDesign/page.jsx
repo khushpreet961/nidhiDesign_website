@@ -143,7 +143,14 @@ const handleUpload = async () => {
 
       {/* HERO */}
       <div className="relative h-screen">
-        <Image src="/images/projects/architectureDesign.png" alt="Architecture Design" fill priority className="object-cover opacity-40" />
+        <Image
+  src="/images/projects/architectureDesign.png"
+  alt="Architecture Design"
+  fill
+  sizes="100vw"
+  priority
+  className="object-cover opacity-40"
+/>
         <div className="absolute inset-0 bg-black/50" />
         <div className="relative z-10 max-w-7xl mx-auto px-6 h-full flex flex-col justify-center">
           <motion.p variants={fadeUp} initial="hidden" animate="show" className="uppercase tracking-[8px] text-amber-400 text-sm">Nidhi Designs</motion.p>
@@ -169,8 +176,8 @@ const handleUpload = async () => {
           <div>
             <p className="text-gray-400 leading-9 text-lg">We specialize in luxury residential, commercial, and farmhouse architecture. Our focus is on creating elegant spaces that are visually stunning, functional, and built for the future.</p>
             <div className="grid grid-cols-3 gap-6 mt-10">
-              <div><h3 className="text-3xl font-bold text-amber-400">12+</h3><p className="text-gray-500">Years</p></div>
-              <div><h3 className="text-3xl font-bold text-amber-400">300+</h3><p className="text-gray-500">Projects</p></div>
+              <div><h3 className="text-3xl font-bold text-amber-400">15+</h3><p className="text-gray-500">Years</p></div>
+              <div><h3 className="text-3xl font-bold text-amber-400">500+</h3><p className="text-gray-500">Projects</p></div>
               <div><h3 className="text-3xl font-bold text-amber-400">100%</h3><p className="text-gray-500">Custom</p></div>
             </div>
           </div>
@@ -198,7 +205,13 @@ const handleUpload = async () => {
           <div className="mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {photos.map((photo) => (
               <div key={photo._id} className="relative h-[400px] rounded-[35px] overflow-hidden">
-                <Image src={photo.imageUrl} alt={photo.title} fill className="object-cover hover:scale-105 transition-transform duration-500" />
+               <Image
+  src={photo.imageUrl}
+  alt={photo.title}
+  fill
+  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+  className="object-cover hover:scale-105 transition-transform duration-500"
+/>
                 {isOwner && (
   <button
     onClick={() => handleDelete(photo._id)}

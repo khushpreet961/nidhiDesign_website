@@ -141,7 +141,13 @@ export default function AdminDashboard() {
           photos.map((photo) => (
             <div key={photo._id} className="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
               <div className="relative h-48">
-                <Image src={photo.imageUrl} alt={photo.title} fill className="object-cover" />
+                <Image
+                  src={photo.imageUrl}
+                  alt={photo.title}
+                  fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
+                  className="object-cover"
+                />
               </div>
               <div className="p-4">
                 <h3 className="font-semibold text-[#1a1210] truncate">{photo.title}</h3>
@@ -180,7 +186,13 @@ export default function AdminDashboard() {
               <input type="file" accept="image/*" onChange={handleFileSelect} className="w-full border border-gray-200 rounded-lg px-4 py-3 focus:outline-none" />
               {previewUrl && (
                 <div className="relative h-40 mt-3 rounded-lg overflow-hidden">
-                  <Image src={previewUrl} alt="Preview" fill className="object-cover" />
+                  <Image
+                    src={previewUrl}
+                    alt="Preview"
+                    fill
+                    sizes="400px"
+                    className="object-cover"
+                  />
                 </div>
               )}
             </div>
@@ -200,28 +212,33 @@ export default function AdminDashboard() {
             <h2 className="text-2xl font-bold text-[#1a1210] mb-6" style={{ fontFamily: 'Cormorant Garamond, serif' }}>Edit Photo</h2>
 
             <div className="relative h-48 rounded-xl overflow-hidden mb-6">
-              <Image src={editingPhoto.imageUrl} alt={editingPhoto.title} fill className="object-cover" />
-            </div>
+              <Image
+                src={editingPhoto.imageUrl}
+                alt={editingPhoto.title}
+                fill
+                sizes="500px"
+                className="object-cover"
+              />
+              </div>
+              <div className="mb-4">
+                <label className="block text-sm font-medium text-[#1a1210] mb-2">Title</label>
+                <input type="text" value={editingPhoto.title} onChange={(e) => setEditingPhoto({ ...editingPhoto, title: e.target.value })} className="w-full border border-gray-200 rounded-lg px-4 py-3 focus:outline-none focus:border-[#d97706]" />
+              </div>
 
-            <div className="mb-4">
-              <label className="block text-sm font-medium text-[#1a1210] mb-2">Title</label>
-              <input type="text" value={editingPhoto.title} onChange={(e) => setEditingPhoto({ ...editingPhoto, title: e.target.value })} className="w-full border border-gray-200 rounded-lg px-4 py-3 focus:outline-none focus:border-[#d97706]" />
-            </div>
+              <div className="mb-6">
+                <label className="block text-sm font-medium text-[#1a1210] mb-2">Category</label>
+                <select value={editingPhoto.category} onChange={(e) => setEditingPhoto({ ...editingPhoto, category: e.target.value })} className="w-full border border-gray-200 rounded-lg px-4 py-3 focus:outline-none focus:border-[#d97706]">
+                  {categories.map((cat) => <option key={cat} value={cat}>{cat}</option>)}
+                </select>
+              </div>
 
-            <div className="mb-6">
-              <label className="block text-sm font-medium text-[#1a1210] mb-2">Category</label>
-              <select value={editingPhoto.category} onChange={(e) => setEditingPhoto({ ...editingPhoto, category: e.target.value })} className="w-full border border-gray-200 rounded-lg px-4 py-3 focus:outline-none focus:border-[#d97706]">
-                {categories.map((cat) => <option key={cat} value={cat}>{cat}</option>)}
-              </select>
-            </div>
-
-            <div className="flex gap-3">
-              <button onClick={() => setEditingPhoto(null)} className="flex-1 border border-gray-300 text-gray-600 py-3 rounded-lg hover:bg-gray-50 transition-colors">Cancel</button>
-              <button onClick={handleEdit} className="flex-1 bg-[#d97706] text-white py-3 rounded-lg hover:bg-[#b45309] transition-colors">Save Changes</button>
+              <div className="flex gap-3">
+                <button onClick={() => setEditingPhoto(null)} className="flex-1 border border-gray-300 text-gray-600 py-3 rounded-lg hover:bg-gray-50 transition-colors">Cancel</button>
+                <button onClick={handleEdit} className="flex-1 bg-[#d97706] text-white py-3 rounded-lg hover:bg-[#b45309] transition-colors">Save Changes</button>
+              </div>
             </div>
           </div>
-        </div>
       )}
-    </div>
-  );
+        </div>
+      );
 }

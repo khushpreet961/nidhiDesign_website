@@ -68,7 +68,7 @@ export default function Footer() {
             <Link href="/" className="flex items-center gap-3 mb-6">
               <div className="relative w-[60px] h-[60px]">
                 <Image
-                  src="/images/logonew.png"
+                  src="/images/logonew2.png"
                   alt="Nidhi Design Logo"
                   fill
                   className="object-contain"
