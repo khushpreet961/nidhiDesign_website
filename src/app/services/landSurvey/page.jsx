@@ -137,7 +137,7 @@ export default function LandSurveyPage() {
 
       {/* HERO */}
       <div className="relative h-[90vh] w-full overflow-hidden">
-        <Image src="/images/projects/LandSurvey.png" alt="Land Survey Project" fill className="object-cover" priority />
+        <Image src="/images/projects/landSurvey.png" alt="Land Survey Project" fill className="object-cover" priority />
         <div className="absolute inset-0 bg-black/55" />
         <div className="absolute inset-0 flex flex-col justify-center px-8 md:px-20 max-w-7xl mx-auto">
           <p className="uppercase tracking-[6px] text-amber-400 text-sm">Nidhi Designs</p>
