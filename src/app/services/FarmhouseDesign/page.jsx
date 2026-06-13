@@ -142,7 +142,7 @@ const handleUpload = async () => {
       {/* HERO */}
       <div className="relative h-[90vh] overflow-hidden">
       <Image
-  src="/images/projects/farmHouse.png"
+  src="/images/projects/farmhouse.png"
   alt="Farm House Design"
   fill
   sizes="100vw"
