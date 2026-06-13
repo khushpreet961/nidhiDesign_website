@@ -30,12 +30,10 @@ export default function ContactPage() {
   try {
 
     setLoading(true);
-
-    const response = await axios.post(
-      "http://localhost:5000/api/contact",
-      formData
-    );
-
+const response = await axios.post(
+  "https://nidhidesign-website.onrender.com/api/contact",
+  formData
+);
     alert(response.data.message);
 
     setFormData({
