@@ -33,7 +33,7 @@ export default function Services() {
       title: "Architecture Design",
       description:
         "Modern and luxurious architectural concepts crafted with innovation and elegance.",
-      link: "/services/architectureDesign",
+      link: "/services/ArchitectureDesign",
      image: "/images/projects/architectureDesign.png",
     },
     {
@@ -49,7 +49,7 @@ export default function Services() {
       title: "Farm House Design",
       description:
         "Farmhouse design blends rustic charm with modern comfort, featuring open spaces, natural materials, and a warm, welcoming look.",
-      link: "/services/farmhouseDesign",
+      link: "/services/FarmhouseDesign",
       image: "/images/projects/farmhouse1.png",
     },
   ];
