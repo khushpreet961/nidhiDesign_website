@@ -227,8 +227,8 @@ export default function InteriorDesignPage() {
         <div className="bg-white rounded-[40px] p-12 shadow-lg">
           <h2 className="text-4xl font-semibold text-gray-900">Why Choose Nidhi Designs?</h2>
           <div className="grid md:grid-cols-3 gap-8 mt-10">
-            <div><h3 className="text-2xl font-semibold text-amber-600">10+</h3><p className="mt-2 text-gray-600">Years of Design Experience</p></div>
-            <div><h3 className="text-2xl font-semibold text-amber-600">300+</h3><p className="mt-2 text-gray-600">Successfully Completed Projects</p></div>
+            <div><h3 className="text-2xl font-semibold text-amber-600">15+</h3><p className="mt-2 text-gray-600">Years of Design Experience</p></div>
+            <div><h3 className="text-2xl font-semibold text-amber-600">500+</h3><p className="mt-2 text-gray-600">Successfully Completed Projects</p></div>
             <div><h3 className="text-2xl font-semibold text-amber-600">100%</h3><p className="mt-2 text-gray-600">Customized Design Solutions</p></div>
           </div>
         </div>
