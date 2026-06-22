@@ -43,7 +43,7 @@ export default function AboutPage() {
       {/* ── STATS STRIP ── */}
       <div className="grid grid-cols-2 md:grid-cols-4 bg-amber-600">
         {[
-          { num: "12+", label: "Years Experience", clickable: false },
+          { num: "15+", label: "Years Experience", clickable: false },
           { num: "550+", label: "Projects Done", clickable: false },
           { num: "99%", label: "Client Satisfaction", clickable: false },
           { num: "11", label: "States Covered", clickable: true },
