@@ -19,10 +19,11 @@ const navLinks = [
 const services = [
   "Architectural Design",
   "Interior Design",
-  "Space Planning",
-  "3D Visualization",
-  "Project Management",
+  "Land Surveying",
+  "Agriculture & Drone Surveying",
+  "Farmhouse Design",
   "Renovation & Remodeling",
+  "Legal documentation",
 ];
 
 const socials = [
