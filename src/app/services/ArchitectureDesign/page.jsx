@@ -177,7 +177,7 @@ const handleUpload = async () => {
             <p className="text-gray-400 leading-9 text-lg">We specialize in luxury residential, commercial, and farmhouse architecture. Our focus is on creating elegant spaces that are visually stunning, functional, and built for the future.</p>
             <div className="grid grid-cols-3 gap-6 mt-10">
               <div><h3 className="text-3xl font-bold text-amber-400">15+</h3><p className="text-gray-500">Years</p></div>
-              <div><h3 className="text-3xl font-bold text-amber-400">500+</h3><p className="text-gray-500">Projects</p></div>
+              <div><h3 className="text-3xl font-bold text-amber-400">550+</h3><p className="text-gray-500">Projects</p></div>
               <div><h3 className="text-3xl font-bold text-amber-400">100%</h3><p className="text-gray-500">Custom</p></div>
             </div>
           </div>

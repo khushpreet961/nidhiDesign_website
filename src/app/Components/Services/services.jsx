@@ -22,7 +22,7 @@ export default function Services() {
     },
     {
       number: "03",
-      title: "Agricultural Surveying",
+      title: "Agricultural & Drone Surveying",
       description:
         "Specialized surveying services for agricultural land assessment and planning.",
       link: "/services/agricultureSurvey",
