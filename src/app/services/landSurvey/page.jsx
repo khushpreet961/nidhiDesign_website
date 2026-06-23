@@ -157,10 +157,10 @@ export default function LandSurveyPage() {
       <div className="bg-black py-12 px-6">
         <div className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
           {[
-            { number: "500+", label: "Projects Completed" },
-            { number: "99%", label: "Accuracy Rate" },
-            { number: "15+", label: "Years Experience" },
-            { number: "50+", label: "Happy Clients" },
+            { number: "550+", label: "Projects Completed" },
+            { number: "99.9%", label: "Accuracy Rate" },
+            { number: "18+", label: "Years Experience" },
+            { number: "500+", label: "Happy Clients" },
           ].map((stat, i) => (
             <div key={i}>
               <p className="text-4xl font-semibold text-amber-400">{stat.number}</p>

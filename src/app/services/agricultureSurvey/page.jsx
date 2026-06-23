@@ -170,7 +170,7 @@ export default function AgricultureSurveyPage() {
             <a href="#process" className="px-8 py-4 rounded-full border border-white/20 text-white text-sm font-medium hover:bg-white/10 transition-all duration-300">Our Process</a>
           </motion.div>
           <motion.div variants={fadeUp} initial="hidden" animate="show" custom={4} className="mt-16 grid grid-cols-3 gap-6 border-t border-white/10 pt-10">
-            {[["500+", "Projects"], ["99%", "Accuracy"], ["15+", "Years"]].map(([n, l], i) => (
+            {[["550+", "Projects"], ["99.9%", "Accuracy"], ["18+", "Years"]].map(([n, l], i) => (
               <div key={i}>
                 <p className="text-2xl font-semibold text-amber-400">{n}</p>
                 <p className="text-gray-500 text-xs uppercase tracking-widest mt-1">{l}</p>
