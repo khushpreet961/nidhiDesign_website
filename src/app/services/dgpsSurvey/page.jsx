@@ -18,7 +18,8 @@ function AnimatedNumber({ target, suffix = "", duration = 2000 }) {
             const elapsed = currentTime - startTime;
             const progress = Math.min(elapsed / duration, 1);
             const eased = 1 - Math.pow(1 - progress, 3);
-            setCount(Math.floor(eased * target));
+            const raw = eased * target;
+            setCount(target % 1 !== 0 ? parseFloat(raw.toFixed(1)) : Math.floor(raw));
             if (progress < 1) requestAnimationFrame(animate);
           };
           requestAnimationFrame(animate);
