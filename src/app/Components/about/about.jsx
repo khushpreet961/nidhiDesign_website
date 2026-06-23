@@ -43,9 +43,9 @@ export default function AboutPage() {
       {/* ── STATS STRIP ── */}
       <div className="grid grid-cols-2 md:grid-cols-4 bg-amber-600">
         {[
-          { num: "15+", label: "Years Experience", clickable: false },
+          { num: "18+", label: "Years Experience", clickable: false },
           { num: "550+", label: "Projects Done", clickable: false },
-          { num: "99%", label: "Client Satisfaction", clickable: false },
+          { num: "99.9%", label: "Client Satisfaction", clickable: false },
           { num: "11", label: "States Covered", clickable: true },
         ].map((stat, i) => (
           <div key={i} onClick={stat.clickable ? () => setShowStates(true) : undefined} className={`px-8 py-7 text-center border-r border-white/20 last:border-r-0 ${stat.clickable ? "cursor-pointer hover:bg-amber-700 transition-colors duration-300 group" : ""}`}>
