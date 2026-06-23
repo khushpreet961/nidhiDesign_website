@@ -49,7 +49,7 @@ export default function DgpsSurveyPage() {
     { number: 550, suffix: "+", label: "Projects Completed", desc: "Successfully delivered across Rajasthan" },
     { number: 18, suffix: "+", label: "Years Experience", desc: "Trusted expertise in DGPS surveying" },
     { number: 99.9, suffix: "%", label: "Client Satisfaction", desc: "Every client leaves happy" },
-    { number: 18, suffix: "hr", label: "Quick Turnaround", desc: "Fast report delivery after survey" },
+    { number: 8, suffix: "hr", label: "Quick Turnaround", desc: "Fast report delivery after survey" },
     { number: 11, suffix: "+", label: "States Covered", desc: "Pan-India project presence" },
   ];
 
